@@ -1,12 +1,27 @@
 # A basic RSS Feed Reader in Terminal using the feedparser module
 
 import feedparser
+import requests
 
 # function that get url input
 def get_url():
-    url = input("Please enter URL: ")
+    while 1:
+        url = input("Please enter URL: ")
+        if (valid_url(url)):
+            return url
+        else:
+            print("Please enter a valid URL!")
 
-    return url
+# Checks if the URL is valid
+def valid_url(url):
+    response = requests.head(url, timeout=5)
+
+    # for any 4xx error we will return false
+    if response.status_code < 400:
+        return True
+    else:
+        return False
+    
 
 # function that parses and return list of channel entries
 def access_url(url):
