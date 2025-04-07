@@ -1,5 +1,8 @@
 # RSS Feed Reader in Terminal
 
+This is an open source project from [DevProjects](http://www.codementor.io/projects). Feedback and questions are welcome!
+Find the project requirements here: [RSS feed reader in terminal](https://www.codementor.io/projects/tool/rss-feed-reader-in-terminal-atx32jp82q)
+
 This is a simple terminal-based RSS Feed Reader built using Python and the `feedparser` module. It allows users to input an RSS feed URL, fetch the feed, and display the titles, descriptions, and links of the feed entries in a user-friendly format.
 
 ## Features
@@ -35,15 +38,15 @@ Before running this project, ensure you have the following installed:
 
 ## Example Output
 
-Please enter URL: https://rss.nytimes.com/services/xml/rss/nyt/World.xml
-+--------------------------------------------------+
-Entry Title: Example News Title 1
-Entry Description: This is a brief description of the first news article.
-Entry Link: https://example.com/news/1
-+--------------------------------------------------+
-Entry Title: Example News Title 2
-Entry Description: This is a brief description of the second news article.
-Entry Link: https://example.com/news/2
+Please enter URL: https://rss.nytimes.com/services/xml/rss/nyt/World.xml <br>
++--------------------------------------------------+           
+Entry Title: Example News Title 1         
+Entry Description: This is a brief description of the first news article.           
+Entry Link: https://example.com/news/1                           
++--------------------------------------------------+                  
+Entry Title: Example News Title 2                
+Entry Description: This is a brief description of the second news article.                 
+Entry Link: https://example.com/news/2                         
 
 ## Limitations
 
