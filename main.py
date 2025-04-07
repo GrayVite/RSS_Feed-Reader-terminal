@@ -26,10 +26,27 @@ def print_entries(entry_list):
 
 # The Main Function
 def main():
-    user_url = get_url()
-    entries = access_url(user_url)
+    no_urls = int(input("Enter the number of URLs: "))
+    # list that contains the links 
+    user_urls = []
+    # list that contains the list of entries
+    entries_list = []
 
-    print_entries(entries)
+    # loop to get the urls and store them in user_urls
+    for i in range(0, no_urls):
+        url = get_url()
+        user_urls.append(url)
+
+    # loop to get the entries list and store them in entries_list
+    for url in user_urls:
+        entries_list.append(access_url(url))
+
+    # loop to print the entries in each list stored in entries_list
+    for entries in entries_list:
+        print("++++++++++++++++++++++++++++++++++++++++++++++++++++")
+        print("++++++++++++++++++++++++++++++++++++++++++++++++++++")
+        print_entries(entries)
+
 
 if __name__ == "__main__":
     main()
