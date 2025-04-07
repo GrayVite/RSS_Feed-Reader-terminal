@@ -5,16 +5,19 @@ import requests
 
 # function that get url input
 def get_url():
-    url = input("Please enter URL: ")
-
-    return url
+    while 1:
+        url = input("Please enter URL: ")
+        if (valid_url(url)):
+            return url
+        else:
+            print("Please enter a valid URL!")
 
 # Checks if the URL is valid
 def valid_url(url):
     response = requests.head(url, timeout=5)
 
     # for any 4xx error we will return false
-    if response < 400:
+    if response.status_code < 400:
         return True
     else:
         return False
