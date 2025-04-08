@@ -27,17 +27,11 @@ def valid_url(url):
 def access_url(url):
     d = feedparser.parse(url)
     
+    # if well-formatted XML, bozo = 0
+    # if ill-formatted XML, bozo = 1
     if (d.bozo):
-        while 1:
-            print("Invalid/Poor XML formatting")
-            user_conf = input("Do you wish to proceed? (Y/n) ").lower()
-
-            if (user_conf == 'y'):
-                return d.entries
-            elif (user_conf == 'n'):
-                return []
-            else:
-                print("Invalid! Please enter y or n")
+        print(f"Invalid RSS Feed: {url}")
+        return []
     
     return d.entries
 
