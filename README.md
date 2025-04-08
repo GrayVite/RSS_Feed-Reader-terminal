@@ -50,5 +50,4 @@ Entry Link: https://example.com/news/2
 
 ## Limitations
 
-- The script assumes that the entered URL is a valid RSS feed URL. No additional validation is performed.
 - The displayed descriptions may be truncated depending on how they are provided in the RSS feed.
