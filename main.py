@@ -16,7 +16,7 @@ def get_url():
 def valid_url(url):
     response = requests.head(url, timeout=5)
 
-    # for any 4xx error we will return false
+    # for any 4xx error (404 ...) we will return false
     if response.status_code < 400:
         return True
     else:
@@ -26,10 +26,20 @@ def valid_url(url):
 # function that parses and return list of channel entries
 def access_url(url):
     d = feedparser.parse(url)
+    
+    if (d.bozo):
+        while 1:
+            print("Invalid/Poor XML formatting")
+            user_conf = input("Do you wish to proceed? (Y/n) ").lower()
 
-    feed_entries = d.entries
-
-    return feed_entries
+            if (user_conf == 'y'):
+                return d.entries
+            elif (user_conf == 'n'):
+                return []
+            else:
+                print("Invalid! Please enter y or n")
+    
+    return d.entries
 
 # function that prints the entries required information
 def print_entries(entry_list):
